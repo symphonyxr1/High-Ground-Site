@@ -49,22 +49,24 @@ Visit our website to explore membership options, upcoming events, and ways to pa
           Blog
         </h1>
 
-        <div 
-          className="bg-black/50 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 duration-300"
-          onClick={() => setIsModalOpen(true)}
-        >
-          <img
-            src={blogPost.image}
-            alt="Blog post cover"
-            className="w-full h-64 object-cover"
-          />
-          <div className="p-6">
-            <h2 className="text-2xl font-playfair text-gold mb-4">
-              {blogPost.title}
-            </h2>
-            <p className="text-white/80 line-clamp-3">
-              {blogPost.content.split('\n')[0]}
-            </p>
+        <div className="max-w-2xl mx-auto">
+          <div 
+            className="bg-black/50 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 duration-300"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <img
+              src={blogPost.image}
+              alt="Blog post cover"
+              className="w-full h-64 object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-2xl font-playfair text-gold mb-4">
+                {blogPost.title}
+              </h2>
+              <p className="text-white/80 line-clamp-3">
+                {blogPost.content.split('\n')[0]}
+              </p>
+            </div>
           </div>
         </div>
 
