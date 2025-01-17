@@ -29,7 +29,7 @@
   }
 
   body {
-    @apply bg-dark text-white;
+    @apply bg-dark text-white overflow-hidden;
   }
 }
 
