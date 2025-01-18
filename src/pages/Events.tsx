@@ -39,7 +39,7 @@ const Events = () => {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("/lovable-uploads/5efbe88b-7ed4-4735-b44a-465db56107d8.png")',
+          backgroundImage: 'url("/lovable-uploads/df60814c-5ea7-4812-9792-56de5b510a84.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
