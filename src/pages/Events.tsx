@@ -1,18 +1,19 @@
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import Navigation from "@/components/Navigation";
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 interface Event {
   id: number;
   title: string;
+  description: string;
   date: string;
   location: string;
-  description: string;
   image: string;
 }
 
 const Events = () => {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const events: Event[] = [
     {
@@ -34,67 +35,80 @@ const Events = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div 
+      className="min-h-screen bg-dark relative"
+      style={{
+        backgroundImage: "url('/lovable-uploads/e95da017-261a-4510-847d-a4aceda3e3d4.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Blue overlay */}
+      <div className="absolute inset-0 bg-blue-900/70" />
+      
       <Navigation />
-      <div className="pt-24 px-4 md:px-8">
-        <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">Upcoming Events</h1>
-        
-        <div className="max-w-6xl mx-auto space-y-12 md:space-y-24">
-          {events.map((event, index) => (
+      
+      <div className="relative z-10 pt-24 px-4 md:px-8">
+        <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
+          Events
+        </h1>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {events.map((event) => (
             <div
               key={event.id}
-              className={`flex flex-col md:flex-row gap-8 items-center ${
-                index % 2 === 1 ? "md:flex-row-reverse" : ""
-              }`}
+              className="bg-black/50 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 duration-300"
+              onClick={() => {
+                setSelectedEvent(event);
+                setIsModalOpen(true);
+              }}
             >
-              <div className="w-full md:w-1/2 group cursor-pointer"
-                   onClick={() => setSelectedEvent(event)}>
-                <div className="relative overflow-hidden rounded-lg">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-[300px] md:h-[400px] object-cover transition-transform duration-700 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
-                </div>
-              </div>
-              
-              <div className="w-full md:w-1/2 space-y-4">
-                <h2 className="text-3xl font-playfair text-gold">{event.title}</h2>
-                <p className="text-white/80">
-                  {event.date} | {event.location}
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl font-playfair text-gold mb-2">
+                  {event.title}
+                </h2>
+                <p className="text-white/80 mb-4 line-clamp-2">
+                  {event.description}
                 </p>
-                <p className="text-white/60 line-clamp-3">{event.description}</p>
-                <button
-                  onClick={() => setSelectedEvent(event)}
-                  className="text-gold hover:text-white transition-colors duration-300"
-                >
-                  Learn More →
-                </button>
+                <div className="flex justify-between text-white/60">
+                  <span>{event.date}</span>
+                  <span>{event.location}</span>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
 
-      <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>
-        <DialogContent className="bg-dark/95 text-white border-gold max-w-3xl max-h-[90vh] overflow-y-auto">
-          {selectedEvent && (
-            <div className="space-y-6">
-              <img
-                src={selectedEvent.image}
-                alt={selectedEvent.title}
-                className="w-full h-[400px] object-cover rounded-lg"
-              />
-              <h2 className="text-3xl font-playfair text-gold">{selectedEvent.title}</h2>
-              <p className="text-white/80">
-                {selectedEvent.date} | {selectedEvent.location}
-              </p>
-              <p className="text-white/60 leading-relaxed">{selectedEvent.description}</p>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="bg-black/95 text-white border-gold">
+            {selectedEvent && (
+              <div className="p-6">
+                <img
+                  src={selectedEvent.image}
+                  alt={selectedEvent.title}
+                  className="w-full h-64 object-cover rounded-lg mb-6"
+                />
+                <h2 className="text-3xl font-playfair text-gold mb-4">
+                  {selectedEvent.title}
+                </h2>
+                <p className="text-white/80 mb-6 whitespace-pre-wrap">
+                  {selectedEvent.description}
+                </p>
+                <div className="flex justify-between text-white/60">
+                  <span>{selectedEvent.date}</span>
+                  <span>{selectedEvent.location}</span>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   );
 };
