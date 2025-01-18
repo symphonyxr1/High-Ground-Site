@@ -42,61 +42,51 @@ Visit our website to explore membership options, upcoming events, and ways to pa
   };
 
   return (
-    <div 
-      className="min-h-screen bg-dark"
-      style={{
-        backgroundImage: "url('/lovable-uploads/b2402f39-61cb-4d65-9edc-07a2b45adb1b.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div className="min-h-screen bg-black/30">
-        <Navigation />
-        <div className="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
-            Blog
-          </h1>
+    <div className="min-h-screen bg-dark">
+      <Navigation />
+      <div className="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
+          Blog
+        </h1>
 
-          <div className="max-w-2xl mx-auto">
-            <div 
-              className="bg-black/50 backdrop-blur-sm rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 duration-300"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <img
-                src={blogPost.image}
-                alt="Blog post cover"
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-playfair text-gold mb-4">
-                  {blogPost.title}
-                </h2>
-                <p className="text-white/80 line-clamp-3">
-                  {blogPost.content.split('\n')[0]}
-                </p>
-              </div>
+        <div className="max-w-2xl mx-auto">
+          <div 
+            className="bg-black/50 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105 duration-300"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <img
+              src={blogPost.image}
+              alt="Blog post cover"
+              className="w-full h-64 object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-2xl font-playfair text-gold mb-4">
+                {blogPost.title}
+              </h2>
+              <p className="text-white/80 line-clamp-3">
+                {blogPost.content.split('\n')[0]}
+              </p>
             </div>
           </div>
-
-          <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-            <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-dark border-gold">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-playfair text-gold">
-                  {blogPost.title}
-                </DialogTitle>
-              </DialogHeader>
-              <img
-                src={blogPost.image}
-                alt="Blog post cover"
-                className="w-full h-64 object-cover rounded-md mb-6"
-              />
-              <div className="text-white/80 whitespace-pre-line">
-                {blogPost.content}
-              </div>
-            </DialogContent>
-          </Dialog>
         </div>
+
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-dark border-gold">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-playfair text-gold">
+                {blogPost.title}
+              </DialogTitle>
+            </DialogHeader>
+            <img
+              src={blogPost.image}
+              alt="Blog post cover"
+              className="w-full h-64 object-cover rounded-md mb-6"
+            />
+            <div className="text-white/80 whitespace-pre-line">
+              {blogPost.content}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
