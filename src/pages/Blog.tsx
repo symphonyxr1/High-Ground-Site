@@ -42,7 +42,14 @@ Visit our website to explore membership options, upcoming events, and ways to pa
   };
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: `url('/lovable-uploads/9e9b38d5-96dc-41e0-a3b9-1849b8b4a6da.png')`,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        backgroundBlendMode: 'overlay'
+      }}
+    >
       <Navigation />
       <div className="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
