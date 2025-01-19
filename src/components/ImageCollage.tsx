@@ -14,7 +14,7 @@ const ImageCollage = () => {
         {images.map((src, index) => (
           <div
             key={index}
-            className="relative h-[50vh] overflow-hidden border-4 border-black"
+            className="relative h-[50vh] overflow-hidden"
           >
             <img
               src={src}
