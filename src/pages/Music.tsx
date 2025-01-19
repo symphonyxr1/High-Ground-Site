@@ -11,9 +11,9 @@ const Music = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="absolute inset-0 bg-black/50" /> {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/50" />
       <Navigation />
-      <div className="pt-24 px-4 md:px-8 relative z-10">
+      <div className="pt-36 px-4 md:px-8 relative z-10">
         <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
           Mixsets
         </h1>

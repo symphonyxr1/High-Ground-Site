@@ -50,7 +50,7 @@ Visit our website to explore membership options, upcoming events, and ways to pa
     >
       <div className="min-h-screen bg-black/50">
         <Navigation />
-        <div className="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <div className="pt-36 px-4 md:px-8 max-w-7xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
             Blog
           </h1>
