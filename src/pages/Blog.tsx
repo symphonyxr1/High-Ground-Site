@@ -12,7 +12,7 @@ const Blog = () => {
 
   const blogPost = {
     title: "High Ground: A Space for Visionaries to Create, Connect, and Elevate",
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+    image: "/lovable-uploads/1545420b-c3ab-44a1-a65e-5fe67501f531.png",
     content: `High Ground is a community built for creators who seek to transform their ideas into impactful projects. By offering unique spaces for collaboration and skill-building, we provide artists and innovators the resources they need to grow. Here, creativity flourishes in an environment designed to inspire and connect.
 
 What Sets High Ground Apart
