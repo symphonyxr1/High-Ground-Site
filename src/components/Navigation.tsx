@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50 p-6">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
-        <Link to="/" className="text-2xl font-playfair text-gold mb-4 md:mb-0">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-2xl font-playfair text-gold">
           High Ground
         </Link>
         <div className="space-x-8">
