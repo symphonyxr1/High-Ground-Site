@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <div className="min-h-screen flex items-center justify-center text-center px-4">
@@ -11,9 +13,12 @@ const Hero = () => {
           creators, share your sound, and push your art further than you thought possible.
         </p>
         <div className="flex gap-6 justify-center">
-          <button className="px-8 py-3 bg-gold text-dark font-semibold rounded hover:bg-opacity-90 transition-all">
+          <Link 
+            to="/events" 
+            className="px-8 py-3 bg-gold text-dark font-semibold rounded hover:bg-opacity-90 transition-all"
+          >
             Explore Events
-          </button>
+          </Link>
           <button className="px-8 py-3 border-2 border-gold text-gold font-semibold rounded hover:bg-gold hover:text-dark transition-all">
             Join Community
           </button>
