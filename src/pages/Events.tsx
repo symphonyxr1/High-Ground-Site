@@ -18,7 +18,7 @@ const Events = () => {
     {
       id: 1,
       title: "Artist Meet-up at The Turn Arounds",
-      date: "January 28, 2025",
+      date: "Coming Soon",
       location: "Carlsbad, CA",
       description: "Join fellow artists for an evening of creativity and connection at The Turns. Share your work, meet like-minded creators, and be inspired by the stunning coastal views. This gathering is perfect for both established artists and those just beginning their creative journey.",
       image: "/lovable-uploads/a6aeba57-4ad0-4d2a-be62-90eadfaa7783.png"
@@ -26,7 +26,7 @@ const Events = () => {
     {
       id: 2,
       title: "Sunset Photography Session",
-      date: "January 28, 2025",
+      date: "TBA",
       location: "High Ground Studio",
       description: "Capture the magic of golden hour with our community of photographers. Whether you're a professional or enthusiast, this session offers the perfect opportunity to expand your portfolio and learn from fellow photographers.",
       image: "/lovable-uploads/00797b6b-c7aa-4e8e-9b2d-ebe7d2d0cb90.png"
@@ -74,7 +74,7 @@ const Events = () => {
                 <div className="w-full md:w-1/2 space-y-4">
                   <h2 className="text-3xl font-playfair text-gold">{event.title}</h2>
                   <p className="text-white/80">
-                    {event.date} | {event.location}
+                    {event.location}
                   </p>
                   <p className="text-white/60 line-clamp-3">{event.description}</p>
                   <button
@@ -101,7 +101,7 @@ const Events = () => {
               />
               <h2 className="text-3xl font-playfair text-gold">{selectedEvent.title}</h2>
               <p className="text-white/80">
-                {selectedEvent.date} | {selectedEvent.location}
+                {selectedEvent.location}
               </p>
               <p className="text-white/60 leading-relaxed">{selectedEvent.description}</p>
             </div>
