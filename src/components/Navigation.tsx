@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50 p-6">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-[50%]">
         <div className="bg-black/30 backdrop-blur-md rounded-2xl p-4 border border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <Link 
