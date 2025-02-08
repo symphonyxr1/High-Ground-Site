@@ -1,10 +1,11 @@
+
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
     <div className="min-h-screen flex items-center justify-center text-center px-4">
       <div className="max-w-4xl">
-        <h1 className="text-6xl md:text-7xl font-playfair mb-8 text-gold">
+        <h1 className="text-6xl md:text-7xl font-playfair mb-8 bg-gradient-to-r from-gold via-amber-200 to-gold bg-clip-text text-transparent animate-gradient">
           Timeless Aura
         </h1>
         <p className="text-xl md:text-2xl mb-12 leading-relaxed">
