@@ -5,7 +5,7 @@ const Navigation = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50 p-6">
       <div className="container mx-auto flex flex-col items-center gap-6">
-        <Link to="/" className="text-2xl font-playfair bg-gradient-to-r from-white to-[#e2d1c3] text-transparent bg-clip-text">
+        <Link to="/" className="text-2xl font-playfair font-bold bg-gradient-to-r from-white to-[#FEC6A1] text-transparent bg-clip-text">
           High Ground
         </Link>
         <div className="bg-black/30 backdrop-blur-md rounded-full px-6 py-3 border border-white/10">
