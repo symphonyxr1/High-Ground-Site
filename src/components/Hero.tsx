@@ -20,9 +20,14 @@ const Hero = () => {
           >
             Explore Events
           </Link>
-          <button className="px-8 py-3 border-2 border-gold text-gold font-semibold rounded hover:bg-gold hover:text-dark transition-all">
+          <a 
+            href="https://symphonyxr.ai/highgroundsignup" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-8 py-3 border-2 border-gold text-gold font-semibold rounded hover:bg-gold hover:text-dark transition-all"
+          >
             Join Community
-          </button>
+          </a>
         </div>
       </div>
     </div>
